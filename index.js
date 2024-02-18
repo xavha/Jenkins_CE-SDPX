@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 app.get('/getcode', (req, res) => {
-  res.send('hello world')
+  res.send('hello whawha')
 })
 
 app.get('/plus/:num1/:num2', (req,res) => {
