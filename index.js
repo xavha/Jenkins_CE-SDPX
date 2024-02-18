@@ -7,8 +7,8 @@ app.get('/getcode', (req, res) => {
 
 app.get('/plus/:num1/:num2', (req,res) => {
     try {
-        const n1 = parseInt(req.params.num1);
-        const n2 = parseInt(req.params.num2);
+        const n1 = parseFloat(req.params.num1);
+        const n2 = parseFloat(req.params.num2);
 
         if (n1 != req.params.num1 || n2 != req.params.num2) {
             throw new Error('Bad Request: Invalid number input.')
@@ -20,7 +20,7 @@ app.get('/plus/:num1/:num2', (req,res) => {
         if (error.message.includes('Bad Request')) {
             res.status(400).send('Bad Request: Invalid number input.');
         } 
-        if (error.message.includes('URIError')) {
+        else if (error.message.includes('URIError')) {
             res.status(400).send('Bad Request: Invalid number input.');
         }
         else {
