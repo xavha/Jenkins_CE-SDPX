@@ -47,7 +47,7 @@ pipeline{
         }
         stage('Clear system'){
             steps{
-                sh 'docker compose -f ./docker-compose.dev.yaml down && docker system prune -a'
+                sh 'docker compose -f ./docker-compose.dev.yaml down && docker system prune -a -f'
             }
         }
         stage('Pull image'){
@@ -55,7 +55,7 @@ pipeline{
                 label 'vm3'
             }
             steps{
-                sh 'docker compose down && docker system prune -a && docker compose up -d --build'
+                sh 'docker compose down && docker system prune -a -f && docker compose up -d --build'
             }
         }
     }
