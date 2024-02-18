@@ -2,8 +2,6 @@ version: '3.8'
 services: 
   api:
     container_name: spdx-backend
-    build: 
-      context: .
-      dockerfile: dockerfile
+    build: .
     ports:
       - "3000:3000"
