@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        lable 'vm2' 
+        label 'vm2' 
     }
     stages{
         stage('Clone'){
@@ -52,7 +52,7 @@ pipeline{
         }
         stage('Pull image'){
             agent{
-                lable 'vm3'
+                label 'vm3'
             }
             steps{
                 sh 'docker compose down && docker system prune -a && docker compose up -d --build'
