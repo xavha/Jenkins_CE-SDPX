@@ -4,4 +4,4 @@ services:
     container_name: spdx-backend
     image: xavha/jenkins:lastest
     ports:
-      -"3000:3000"
+      - "3000:3000"
