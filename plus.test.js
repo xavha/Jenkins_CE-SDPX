@@ -45,3 +45,7 @@ describe('GET /plus/:num1/:num2', () => {
         }
     });
 });
+
+// afterAll(done => {
+//     app.server.close(done)
+// });

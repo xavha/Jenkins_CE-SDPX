@@ -16,7 +16,7 @@ app.get('/plus/:num1/:num2', (req,res) => {
 
         res.send(`${n2 + n1}`)     
     } catch (error) {
-        console.error(error.message)
+        // console.error(error.message)
         if (error.message.includes('Bad Request')) {
             res.status(400).send('Bad Request: Invalid number input.');
         } 
