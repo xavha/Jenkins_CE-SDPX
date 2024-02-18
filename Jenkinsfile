@@ -1,12 +1,11 @@
 pipeline{
     agent{
-        lable : vm2 
+        lable 'vm2' 
     }
     stages{
         stage('Clone'){
             steps{
-                git branch: 'main'
-                url: 'https://github.com/xavha/Jenkins_CE-SDPX.git'
+                git branch: 'main',url: 'https://github.com/xavha/Jenkins_CE-SDPX.git'
             }
         }
         stage('Install Packages'){
@@ -27,8 +26,7 @@ pipeline{
         stage('Clone Robot Framework'){
             steps{
                 dir('./robot/'){
-                    git branch: 'main'
-                    url: 'https://github.com/xavha/Jenkins_CE-SDPX_test.git'
+                    git branch: 'main',url: 'https://github.com/xavha/Jenkins_CE-SDPX_test.git'
                 }
             }
         }
@@ -54,7 +52,7 @@ pipeline{
         }
         stage('Pull image'){
             agent{
-                lable: vm3
+                lable 'vm3'
             }
             steps{
                 sh 'docker compose down && docker system prune -a && docker compose up -d --build'
